@@ -4,4 +4,4 @@ NAND
 
 NOR  
 
-<img src="images/nor_procedure.jog">
+<img src="images/nor_procedure.jpg">

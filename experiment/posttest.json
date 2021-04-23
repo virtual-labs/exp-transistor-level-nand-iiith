@@ -1,7 +1,7 @@
 [
 {"question":"1. Identify the symbol for NAND gate.",
 "answers":{
-            "a":"<img src='images/nand.jpg'>",
+            "img":"data:images/nand.jpg",
             "b":"<img src='images/inv.jpg'>",
             "c":"<img src='images/not.jpg'>",
             "d":"<img src='images/and.jpg'>"

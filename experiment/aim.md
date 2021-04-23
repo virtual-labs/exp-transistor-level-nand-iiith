@@ -10,10 +10,10 @@ A NAND gate could be veiwed as an AND gate with inverter at the output
 
 | Input A | Input B |Output |
 |---------|---------|-------|
-| 0	      |  0      |	1     |
-| 0	      |  1      | 1     |
-| 1       |	 0      |	1     |
-| 1       |	 1      | 0     |  
+| 0       |  0      |	1   |
+| 0       |  1      | 1     |
+| 1       |	 0  |	1   |
+| 1       |	 1  | 0     |  
 
 **DEFINITION OF NOR GATE**
 

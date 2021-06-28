@@ -6,7 +6,8 @@ A NAND gate could be veiwed as an AND gate with inverter at the output
 
 **SCHEMATIC OF NAND GATE**
 
-<img src="images/nand_shematic.jpg">
+<img src="images/nand_schematic.jpg">  
+
 
 | Input A | Input B |Output |
 |---------|---------|-------|
@@ -23,7 +24,8 @@ A NOR gate could be viewed as an OR gate with inverter at the output
 
 **SCHEMATIC OF NOR GATE**
 
-<img src="images/nor_shematic.jpg">
+<img src="images/nor_schematic.jpg"> 
+
 
 |Input A | Input B | Output|
 |--------|---------|-------|

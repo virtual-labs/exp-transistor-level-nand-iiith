@@ -1,18 +1,84 @@
 [
-{"question":"This is a Sample Question 1?",
+{"question":"1. Identify the symbol for NAND gate.",
 "answers":{
-            "a":"answer1",
-            "b":"answer2",
-            "c":"answer3",
-            "d":"answer4"
+            "a":"<img src='images/nand.jpg'>",
+            "b":"<img src='images/inv.jpg'>",
+            "c":"<img src='images/not.jpg'>",
+            "d":"<img src='images/and.jpg'>"
           },
 "correctAnswer":"a"},
-{"question":"This is a Sample Question 2?",
+
+{"question":"2. Identify the symbol for NOR gate.",
 "answers":{
-            "a":"answer1",
-            "b":"answer2",
-            "c":"answer3",
-            "d":"answer4"
+            "a":"<img src='images/and.jpg'>",
+            "b":"<img src='images/nand.jpg'>",
+            "c":"<img src='images/nor.jpg'>",
+            "d":"<img src='images/or.jpg'>"
           },
-"correctAnswer":"c"} 
+"correctAnswer":"c"},
+
+{"question":"3. How do we represent with n-devices?",
+"answers":{
+            "a":"Series connection of n-devices with input A and input B",
+            "b":"Parallel connection of p-devices with input A and input B",
+            "c":"Combination of series and parallel connecton of n-devices",
+            "d":"None"
+          },
+"correctAnswer":"b"},
+            
+{"question":"4. What is the correct representation (in terms of switches) for two n-devices connected in series having inputs 0 & 1?",
+"answers":{
+            "a":"<img src='images/n00.jpg'>",
+            "b":"<img src='images/n10.jpg'>",
+            "c":"<img src='images/n11.jpg'>",
+            "d":"<img src='images/n01.jpg'>"
+          },
+"correctAnswer":"d"},            
+            
+
+{"question":"5. What is the correct representation (in terms of switches) for two p-devices connected in series having both inputs as 1?",
+"answers":{
+            "a":"<img src='images/p00.jpg'>",
+            "b":"NMOS in parallel and PMOS in series",
+            "c":"Both NMOS and PMOkar1.jpgrallel",
+            "d":"Both NMOS and PMOS in parallel"
+          },
+"correctAnswer":"b"},
+            
+{"question":" 6. Which of the following Boolean expression is represented by the given karnaugh map? <img src='images/kar1.jpg'>",
+"answers":{
+            "a":"B",
+            "b":"A",
+            "c":"A+B",
+            "d":"AB"
+          },
+"correctAnswer":"a"},
+            
+{"question":"7. Which of the following Boolean expression is represented by the given karnaugh map? <img src='images/kar2.jpg'>",
+"answers":{
+            "a":"AB",
+            "b":"BC",
+            "c":"AC",
+            "d":"ABC"
+          },
+"correctAnswer":"c"},
+            
+{"question":"8. Which combination of logic gates is correct for the expression ABCD?",
+"answers":{
+            "a":"<img src='images/t1.jpg'>",
+            "b":"<img src='images/t2.jpg'>",
+            "c":"Both a & b",
+            "d":"None"
+          },
+"correctAnswer":"c"},
+            
+{"question":" 9. Which combination of logic gates is correct for the following expression? <img src='images/exp1.jpg'>",
+"answers":{
+            "a":"<img src='images/t3.jpg'>",
+            "b":"<img src='images/t4.jpg'>",
+            "c":"none of the above",
+            "d":"Both a & b"
+          },
+"correctAnswer":"d"}           
+            
 ]

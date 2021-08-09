@@ -17,10 +17,10 @@ If switches are connected in series then the composite switch hence constructed 
 Series connection of NMOS devices
 
 |B  |          |
-|A  |	0 1      |
+|A  |	0 1    |
 |---|----------|
 |0  | OFF |OFF |
-|1  |	OFF | ON |
+|1  | OFF | ON |
 
 
 Series connection of PMOS devices

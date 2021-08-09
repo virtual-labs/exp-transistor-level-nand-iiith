@@ -1,7 +1,7 @@
 [
 {"question":"1. Identify the symbol for NAND gate.",
 "answers":{
-            "img":"data:images/nand.jpg",
+            "a":"<img src='images/nand.jpg'>",
             "b":"<img src='images/inv.jpg'>",
             "c":"<img src='images/not.jpg'>",
             "d":"<img src='images/and.jpg'>"
@@ -76,8 +76,8 @@
 "answers":{
             "a":"<img src='images/t3.jpg'>",
             "b":"<img src='images/t4.jpg'>",
-            "c":"<img src='none of the above",
-            "d":"<img src='Both a & b"
+            "c":"none of the above",
+            "d":"Both a & b"
           },
 "correctAnswer":"d"}           
             

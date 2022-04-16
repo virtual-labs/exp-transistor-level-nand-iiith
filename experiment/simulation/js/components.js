@@ -26,7 +26,7 @@ jsplumbInstance.bind("ready", function () {
 });
 
 
-jsplumbInstance.bind("connection", () => {
+function editConnectionMap() {
     const con = jsplumbInstance.getAllConnections();
     connectionMap.clear();
     for (i = 0; i < con.length; i++) {
@@ -35,19 +35,16 @@ jsplumbInstance.bind("connection", () => {
         connectionMap.set(r, t)
 
     }
+}
+
+jsplumbInstance.bind("connection", () => {
+    editConnectionMap()
 });
+
 jsplumbInstance.bind("dblclick", function (ci) {
 
     jsplumbInstance.deleteConnection(ci);
-    const con = jsplumbInstance.getAllConnections();
-    connectionMap.clear();
-    for (i = 0; i < con.length; i++) {
-        const s = con[i].sourceId, t = con[i].targetId;
-        const r = s.concat("$", t);
-        connectionMap.set(r, t)
-
-    }
-    console.log(connectionMap)
+    editConnectionMap()
 
 });
 

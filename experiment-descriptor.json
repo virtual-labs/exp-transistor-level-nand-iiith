@@ -28,6 +28,20 @@
       "content-type": "text"
     },
     {
+      "unit-type": "task",
+      "label": "Pretest",
+      "content-type": "assesment",
+      "source": "pretest.json",
+      "target": "pretest.html"
+    },
+    {
+      "target": "demo-nand.html",
+      "source": "simulation/demo-nand.html",
+      "label": "Demo",
+      "unit-type": "task",
+      "content-type": "simulation"
+    },
+    {
       "target": "simulation.html",
       "source": "simulation/index.html",
       "label": "Simulation",

@@ -1,13 +1,7 @@
 'use strict';
-function nandValid() {
-    checkAndUpdate()
-    modifyOutput()
-    circuitValid()
-    showTruthTable()
-    document.getElementById('error-container').style = 'display:none;';
-}
-
-function checkNand() {
+import { connectionMap,listInput, selectedTab,currentTab } from './main.js';
+import { checkAndUpdate, getTruthValue } from './circuit.js';
+export function checkNand() {
     const permutatorMap = permutator([0, 1])
     let nandCircuitValid = 0
     for (let i = 0; i < permutatorMap.length; i++) {
@@ -30,7 +24,7 @@ function checkNand() {
 
 }
 
-function checkNor() {
+export function checkNor() {
     const permutatorMap = permutator([0, 1])
     let norCircuitValid = 0
     for (let i = 0; i < permutatorMap.length; i++) {
@@ -52,12 +46,12 @@ function checkNor() {
     return norCircuitValid
 }
 
-function modifyOutput() {
+export function modifyOutput() {
     const divOutput0 = document.getElementById("output0")
     divOutput0.innerHTML = 'Output<br>' + getTruthValue()
 }
 
-function permutator(inputArr) {
+export function permutator(inputArr) {
     const results = [];
 
     function permute(arr, memo) {
@@ -80,7 +74,7 @@ function permutator(inputArr) {
     return permute(inputArr);
 }
 
-function checkPseudoNmos() {
+export function checkPseudoNmos() {
     const permutatorMap = permutator([0, 1])
     let psNmosCircuitValid = 0
     for (let i = 0; i < permutatorMap.length; i++) {
@@ -92,7 +86,7 @@ function checkPseudoNmos() {
     return psNmosCircuitValid
 }
 
-function circuitValid() {
+export function circuitValid() {
     const nandCircuitValid = checkNand()
     const norCircuitValid = checkNor()
     // check if correct nand gate is made using correct components
@@ -107,14 +101,14 @@ function circuitValid() {
     }
 }
 
-function changeObservation(htmlText, removedClass, addedClass) {
+export function changeObservation(htmlText, removedClass, addedClass) {
     const observationBoxElem = document.getElementById("output-box");
     observationBoxElem.innerHTML = htmlText;
     observationBoxElem.classList.remove(removedClass);
     observationBoxElem.classList.add(addedClass);
 }
 
-function showTruthTable() {
+export function showTruthTable() {
     const output = [0, 0, 0, 0];
     const tableBody = document.getElementById("table-body")
     const divInput0 = document.getElementById("input0")

@@ -1,10 +1,10 @@
 // This function checks map when called
 'use strict';
-
-function checkAndUpdate() {
+import { connectionMap, listPmos, listNmos,listInput, listOutput, listGround ,listVdd } from './main.js';
+import{checkPseudoNmos} from './nand.js';
+import { checkNand } from './nand.js';
+export function checkAndUpdate() {
     // these variables are for pseudo nmos circuit
-    nmosNand = 0;
-    pmosNand = 0;
     listOutput[0].voltage = 0;
     // if any vdd is connected to any pmos store voltage
     for (let i = 0; i < listVdd.length; i++) {
@@ -108,7 +108,6 @@ function checkAndUpdate() {
 
                 if (listPmos[i].outTerminal === 1) {
                     listOutput[j].voltage = listPmos[i].outVoltage;
-                    pmosNand++;
                 }
                 if (listPmos[i].outTerminal === -1) {
                     listOutput[j].voltage = listPmos[i].outVoltage;
@@ -127,14 +126,13 @@ function checkAndUpdate() {
                 // if nmos 
                 if (listNmos[i].outTerminal === 1) {
                     listOutput[j].voltage = listNmos[i].outVoltage;
-                    nmosNand++;
                 }
             }
         }
     }
 }
 
-function getTruthValue() {
+export function getTruthValue() {
     const out = listOutput[0].voltage
     const psNmosCircuitValid = checkPseudoNmos()
     const nandCircuitValid = checkNand()

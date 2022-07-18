@@ -1,9 +1,39 @@
 'use strict';
+import { listPmos, listNmos,listInput, listOutput, listGround ,listVdd, selectedTab, currentTab,refreshObservations } from './main.js';
+import { jsplumbInstance,addInstanceFinalInput,addInstanceFinalOutput } from './components.js';
+import { addInstanceGround, addInstanceVdd, addInstancePmos, addInstanceNmos } from './components.js';
+import { checkAndUpdate } from './circuit.js';
+import { modifyOutput, circuitValid,showTruthTable} from './nand.js';
 
+let count = { PMOS: 0, NMOS: 0, VDD: 0, Ground: 0, Inverter: 0, Mux: 0, Latch: 0, Transistor: 0, Clock: 0, Clockbar: 0 };
+let maxCount = { PMOS: 2, NMOS: 2, VDD: 1, Ground: 1, Inverter: 0, Mux: 0, Latch: 0, Transistor: 0, Clock: 0, Clockbar: 0 };
+
+window.compPmos=compPmos;
+window.compNmos=compNmos;
+window.compVdd=compVdd;
+window.compGround=compGround;
+window.nandValid=nandValid;
+
+export function resetCounts() {
+    count = { PMOS: 0, NMOS: 0, VDD: 0, Ground: 0, Inverter: 0, Mux: 0, Latch: 0, Transistor: 0, Clock: 0, Clockbar: 0 };
+    maxCount = { PMOS: 2, NMOS: 2, VDD: 1, Ground: 1, Inverter: 0, Mux: 0, Latch: 0, Transistor: 0, Clock: 0, Clockbar: 0 };
+}
+export function nandValid() {
+    refreshObservations();
+    checkAndUpdate();
+    modifyOutput();
+    circuitValid();
+    showTruthTable();
+}
+function printExcessComponents() {
+    const result = document.getElementById("error-container")
+    result.innerHTML = "Required no. of components of this type are already present in the workspace";
+    result.className = "text-danger";
+}
 function compPmos() {
     maxCount.PMOS -= 1;
     if (maxCount.PMOS < 0) {
-        document.getElementById('error-container').style.display = 'flex';
+        printExcessComponents();
         return;
     }
 
@@ -40,7 +70,7 @@ function compPmos() {
 function compNmos() {
     maxCount.NMOS -= 1;
     if (maxCount.NMOS < 0) {
-        document.getElementById('error-container').style.display = 'flex';
+        printExcessComponents();
         return;
     }
 
@@ -75,7 +105,7 @@ function compNmos() {
 function compVdd() {
     maxCount.VDD -= 1;
     if (maxCount.VDD < 0) {
-        document.getElementById('error-container').style.display = 'flex';
+        printExcessComponents();
         return;
     }
 
@@ -104,7 +134,7 @@ function compGround() {
 
     maxCount.Ground -= 1;
     if (maxCount.Ground < 0) {
-        document.getElementById('error-container').style.display = 'flex';
+        printExcessComponents();
         return;
     }
 
@@ -176,7 +206,7 @@ function compGround() {
     }, !0), t.addEventListener("wheel", v, !0), t.addEventListener("scroll", v, !0), t.addEventListener(i, function (e) { u = e.clientX, r = e.clientY, l(e) }, !0)
 }(window, document);
 
-function compInput0() {
+export function compInput0() {
     const id = "input0";
     const svgElement = document.createElement('div');
     svgElement.innerHTML = 'Input 1<br>1'
@@ -231,7 +261,7 @@ function compInput0() {
 
 }
 
-function compInput1() {
+export function compInput1() {
     const id = "input1";
     const svgElement = document.createElement('div');
     svgElement.innerHTML = 'Input 2<br>1'
@@ -285,7 +315,7 @@ function compInput1() {
     addInstanceFinalInput(id);
 }
 
-function compOutput() {
+export function compOutput() {
     const id = "output0";
     const svgElement = document.createElement('div');
     svgElement.innerHTML = 'Output<br>-'

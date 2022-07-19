@@ -87,12 +87,6 @@ function outputDotsDisappear() {
         objectDisappear(outputDot);
     }
 }
-function outputDotsAppear() {
-    for (const outputDot of outputDots) {
-        objectAppear(outputDot);
-    }
-}
-
 // function to disappear the output text
 function outputDisappear() {
     for (const text of textOutput) {
@@ -121,25 +115,43 @@ function setInputDots() {
 }
 
 function setInputA() {
-    if (textInput[0].textContent !== "0" && timeline.progress() === 0) {
-        changeTo0(26, 200, 0, 0);
+    if (timeline.progress() === 0) {
+        if (textInput[0].textContent !== "0") {
+            changeTo0(26, 200, 0, 0);
+        }
+        else{
+            changeTo1(26, 200, 0, 0);
+        }
+        setter(textInput[0].textContent, inputDots[0]);
+        setter(textInput[0].textContent, inputDots[1]);
     }
-    else if (textInput[0].textContent !== "1" && timeline.progress() === 0) {
-        changeTo1(26, 200, 0, 0);
+    else if (timeline.progress() === 1) {
+        observ.innerHTML = "Simulation has finished. Press Reset to start again";
     }
-    setter(textInput[0].textContent, inputDots[0]);
-    setter(textInput[0].textContent, inputDots[1]);
+    else {
+        observ.innerHTML = "Simulation has started wait for it to end";
+    }
+
 }
 function setInputB() {
-    if (textInput[1].textContent !== "0" && timeline.progress() === 0) {
-        changeTo0(195, 378, 1, 1);
+    if (timeline.progress() === 0) {
+        if (textInput[1].textContent !== "0") {
+            changeTo0(195, 378, 1, 1);
+        }
+        else{
+            changeTo1(195, 378, 1, 1);
+        }
+        setter(textInput[1].textContent, inputDots[2]);
+        setter(textInput[1].textContent, inputDots[3]);
     }
-    else if (textInput[1].textContent !== "1" && timeline.progress() === 0) {
-        changeTo1(195, 378, 1, 1);
+    else if (timeline.progress() === 1) {
+        observ.innerHTML = "Simulation has finished. Press Reset to start again";
     }
-    setter(textInput[1].textContent, inputDots[2]);
-    setter(textInput[1].textContent, inputDots[3]);
+    else {
+        observ.innerHTML = "Simulation has started wait for it to end";
+    }
 }
+
 
 function changeTo1(coordinateX, coordinateY, object, textObject) {
     textInput[textObject].textContent = 1;
@@ -174,7 +186,7 @@ function setter(value, component) {
     if (value === "1") {
         unsetColor(component);
     }
-    else if (value === "0") {
+    else{
         setColor(component);
     }
 }
@@ -204,7 +216,7 @@ function simulationStatus() {
     if (!decide) {
         startCircuit();
     }
-    else if (decide) {
+    else{
         stopCircuit();
     }
 }
@@ -216,7 +228,7 @@ function stopCircuit() {
         status.innerHTML = "Start";
         speed.selectedIndex = 0;
     }
-    else if (timeline.progress() === 1) {
+    else{
         observ.innerHTML = "Please Restart the simulation";
     }
 }

@@ -1,17 +1,17 @@
 
-'use strict'
-import { compOutput, compInput0,compInput1,resetCounts } from './integrate.js'
+'use strict';
+import { compOutput, compInput0,compInput1,resetCounts } from './integrate.js';
 import { jsplumbInstance, editConnectionMap } from './components.js';
 //Creating js map to store connections
 export const connectionMap = new Map();
 // these arrays are used to store various components
-export const listPmos = [];
-export const listNmos = [];
-export const listInput = [];
-export const listOutput = [];
-export const listGround = [];
-export const listVdd = [];
-export const listInverter = [];
+export let listPmos = [];
+export let listNmos = [];
+export let listInput = [];
+export let listOutput = [];
+export let listGround = [];
+export let listVdd = [];
+export let listInverter = [];
 // Disable right click 
 const EMPTY="";
 const container = document.getElementById("diagram");
@@ -20,8 +20,8 @@ container.addEventListener("contextmenu", function (e) {
 });
 
 // Tab selection
-export const currentTab = { NAND: 0, NOR: 1 }
-export let selectedTab = currentTab.NAND
+export const currentTab = { NAND: 0, NOR: 1 };
+export let selectedTab = currentTab.NAND;
 const tabs = document.querySelectorAll('.v-tabs li');
 
 tabs.forEach(tab => {
@@ -31,8 +31,8 @@ tabs.forEach(tab => {
         let parent = tab.parentNode;
         selectedTab = Array.prototype.indexOf.call(parent.children, tab);
         refreshWorkingArea();
-    })
-})
+    });
+});
 
 window.refreshWorkingArea = refreshWorkingArea;
 
@@ -61,12 +61,12 @@ function emptyList() {
         let elem = document.getElementById(outputElem.id);
         elem.parentNode.removeChild(elem);
     }
-    listPmos.length = 0;
-    listNmos.length = 0;
-    listGround.length = 0;
-    listVdd.length = 0;
-    listInput.length = 0;
-    listOutput.length = 0;
+    listPmos = [];
+    listNmos = [];
+    listGround = [];
+    listVdd = [];
+    listInput = [];
+    listOutput = [];
 }
 
 export function refreshObservations() {

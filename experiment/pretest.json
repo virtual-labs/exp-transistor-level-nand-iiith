@@ -1,6 +1,6 @@
 [
 	{
-		"question": "1. Which of the following gates give 1 as the otput only when its inputs are 0 only?",
+		"question": "1. Which of the following gates give 1 as the output only when its inputs are 0 only?",
 		"answers": {
 			"a": "NAND",
 			"b": "XOR",
@@ -30,7 +30,7 @@
 		"correctAnswer": "c"
 	},
 	{
-		"question": " 4. In CMOS NAND gate the NMOS are in",
+		"question": "4. In CMOS NAND gate the NMOS are in",
 		"answers": {
 			"a": "Series",
 			"b": "Parallel",

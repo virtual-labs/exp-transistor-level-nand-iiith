@@ -45,7 +45,7 @@ function compPmos() {
     // render in workspace
     const svgElement = document.createElement('div');
     svgElement.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg"xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-0.5 -0.5 84 84" >
+        <svg xmlns="https://www.w3.org/2000/svg"xmlns:xlink="https://www.w3.org/1999/xlink" version="1.1" viewBox="-0.5 -0.5 84 84" >
             <g class="demo-transistor">
                 <path d="M 31 61 L 31 21"/>
                 <path d="M 41 61 L 41 21"/>
@@ -88,7 +88,7 @@ function compNmos() {
 
     const svgElement = document.createElement('div');
     svgElement.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-0.5 -0.5 84 84">
+        <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" version="1.1" viewBox="-0.5 -0.5 84 84">
             <g class="demo-transistor">
                 <path d="M 31 61 L 31 21"/>
                 <path d="M 41 61 L 41 21"/>
@@ -132,7 +132,7 @@ function compVdd() {
 
     const svgElement = document.createElement('div');
     svgElement.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-0.5 -6 44 34" >
+        <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" version="1.1" viewBox="-0.5 -6 44 34" >
             <g class="demo-transistor">
                 <path d="M 21 31 L 21 1 L 1 1 L 41 1"/>
             </g>
@@ -167,7 +167,7 @@ function compGround() {
 
     const svgElement = document.createElement('div');
     svgElement.innerHTML = `
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-0.5 8 64 44" >
+    <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" version="1.1" viewBox="-0.5 8 64 44" >
         <g class="demo-transistor">
             <path d="M 31 1 L 31 21 L 1 21 L 61 21"/>
             <path d="M 11 31 L 51 31"/>

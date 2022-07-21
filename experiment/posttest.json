@@ -50,7 +50,7 @@
     "correctAnswer": "b"
   },
   {
-    "question": " 6. Which of the following Boolean expression is represented by the given karnaugh map? <img src='images/kar1.jpg'>",
+    "question": "6. Which of the following Boolean expression is represented by the given karnaugh map? <img src='images/kar1.jpg'>",
     "answers": {
       "a": "B",
       "b": "A",
@@ -80,7 +80,7 @@
     "correctAnswer": "c"
   },
   {
-    "question": " 9. Which combination of logic gates is correct for the following expression? <img src='images/exp1.jpg'>",
+    "question": "9. Which combination of logic gates is correct for the following expression? <img src='images/exp1.jpg'>",
     "answers": {
       "a": "<img src='images/t3.jpg'>",
       "b": "<img src='images/t4.jpg'>",

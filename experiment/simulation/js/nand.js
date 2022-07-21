@@ -1,13 +1,27 @@
 'use strict';
-import { connectionMap,listInput, selectedTab,currentTab } from './main.js';
+import { connectionMap, listInput, selectedTab, currentTab } from './main.js';
 import { checkAndUpdate, getTruthValue } from './circuit.js';
+function checkConnectionsNand(i, j, permutatorMap) {
+    return (connectionMap.has("input" + permutatorMap[i][0] + "$pmos" + permutatorMap[j][0])
+        && connectionMap.has("input" + permutatorMap[i][1] + "$pmos" + permutatorMap[j][1])
+        && connectionMap.has("input" + permutatorMap[i][0] + "$nmos" + permutatorMap[k][0])
+        && connectionMap.has("input" + permutatorMap[i][1] + "$nmos" + permutatorMap[k][1])
+        && connectionMap.has("vdd0$pmos" + permutatorMap[j][0])
+        && connectionMap.has("vdd0$pmos" + permutatorMap[j][1])
+        && connectionMap.has("ground0$nmos" + permutatorMap[k][1])
+        && connectionMap.has("pmos" + permutatorMap[j][0] + "$output0")
+        && connectionMap.has("pmos" + permutatorMap[j][1] + "$output0")
+        && connectionMap.has("nmos" + permutatorMap[k][0] + "$output0")
+        && connectionMap.has("nmos" + permutatorMap[k][1] + "$nmos" + permutatorMap[k][0])
+        && (connectionMap.size === 11))
+}
 export function checkNand() {
     const permutatorMap = permutator([0, 1]);
     let nandCircuitValid = 0;
     for (let i = 0; i < permutatorMap.length; i++) {
         for (let j = 0; j < permutatorMap.length; j++) {
             for (let k = 0; k < permutatorMap.length; k++) {
-                if (connectionMap.has("input" + permutatorMap[i][0] + "$pmos" + permutatorMap[j][0]) && connectionMap.has("input" + permutatorMap[i][1] + "$pmos" + permutatorMap[j][1]) && connectionMap.has("input" + permutatorMap[i][0] + "$nmos" + permutatorMap[k][0]) && connectionMap.has("input" + permutatorMap[i][1] + "$nmos" + permutatorMap[k][1]) && connectionMap.has("vdd0$pmos" + permutatorMap[j][0]) && connectionMap.has("vdd0$pmos" + permutatorMap[j][1]) && connectionMap.has("ground0$nmos" + permutatorMap[k][1]) && connectionMap.has("pmos" + permutatorMap[j][0] + "$output0") && connectionMap.has("pmos" + permutatorMap[j][1] + "$output0") && connectionMap.has("nmos" + permutatorMap[k][0] + "$output0") && connectionMap.has("nmos" + permutatorMap[k][1] + "$nmos" + permutatorMap[k][0]) && (connectionMap.size === 11)) {
+                if (checkConnectionsNand(i, j, permutatorMap)) {
                     nandCircuitValid = 1;
                     break;
                 }
@@ -22,14 +36,27 @@ export function checkNand() {
     }
     return nandCircuitValid;
 }
-
+function checkConnectionsNor(i, j, permutatorMap) {
+    return (connectionMap.has("input" + permutatorMap[i][0] + "$pmos" + permutatorMap[j][0])
+        && connectionMap.has("input" + permutatorMap[i][1] + "$pmos" + permutatorMap[j][1])
+        && connectionMap.has("input" + permutatorMap[i][0] + "$nmos" + permutatorMap[k][0])
+        && connectionMap.has("input" + permutatorMap[i][1] + "$nmos" + permutatorMap[k][1])
+        && connectionMap.has("vdd0$pmos" + permutatorMap[j][0])
+        && connectionMap.has("ground0$nmos" + permutatorMap[k][0])
+        && connectionMap.has("ground0$nmos" + permutatorMap[k][1])
+        && connectionMap.has("pmos" + permutatorMap[j][1] + "$output0")
+        && connectionMap.has("nmos" + permutatorMap[k][1] + "$output0")
+        && connectionMap.has("nmos" + permutatorMap[k][0] + "$output0")
+        && connectionMap.has("pmos" + permutatorMap[j][0] + "$pmos" + permutatorMap[j][1])
+        && (connectionMap.size === 11))
+}
 export function checkNor() {
     const permutatorMap = permutator([0, 1]);
     let norCircuitValid = 0;
     for (let i = 0; i < permutatorMap.length; i++) {
         for (let j = 0; j < permutatorMap.length; j++) {
             for (let k = 0; k < permutatorMap.length; k++) {
-                if (connectionMap.has("input" + permutatorMap[i][0] + "$pmos" + permutatorMap[j][0]) && connectionMap.has("input" + permutatorMap[i][1] + "$pmos" + permutatorMap[j][1]) && connectionMap.has("input" + permutatorMap[i][0] + "$nmos" + permutatorMap[k][0]) && connectionMap.has("input" + permutatorMap[i][1] + "$nmos" + permutatorMap[k][1]) && connectionMap.has("vdd0$pmos" + permutatorMap[j][0]) && connectionMap.has("ground0$nmos" + permutatorMap[k][0]) && connectionMap.has("ground0$nmos" + permutatorMap[k][1]) && connectionMap.has("pmos" + permutatorMap[j][1] + "$output0") && connectionMap.has("nmos" + permutatorMap[k][1] + "$output0") && connectionMap.has("nmos" + permutatorMap[k][0] + "$output0") && connectionMap.has("pmos" + permutatorMap[j][0] + "$pmos" + permutatorMap[j][1]) && (connectionMap.size === 11)) {
+                if (checkConnectionsNor(i, j, permutatorMap)) {
                     norCircuitValid = 1;
                     break;
                 }
@@ -144,7 +171,7 @@ export function showTruthTable() {
     checkAndUpdate();
     output[3] = getTruthValue();
     if (selectedTab === 0) {
-        tableBody.innerHTML =` 
+        tableBody.innerHTML = ` 
         <tr>
             <td>0</td><td>0</td><td>1</td><td>  ${output[0]}  </td>
         </tr> 

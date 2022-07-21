@@ -42,8 +42,8 @@
       "content-type": "simulation"
     },
     {
-      "target": "simulation.html",
-      "source": "simulation/index.html",
+      "target": "practice.html",
+      "source": "simulation/practice.html",
       "label": "Practice",
       "unit-type": "task",
       "content-type": "simulation"

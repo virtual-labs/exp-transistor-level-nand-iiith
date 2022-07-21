@@ -36,7 +36,7 @@ export function checkNand() {
     }
     return nandCircuitValid;
 }
-function checkConnectionsNor(i, j, permutatorMap) {
+function checkConnectionsNor(i, j, k, permutatorMap) {
     return (connectionMap.has("input" + permutatorMap[i][0] + "$pmos" + permutatorMap[j][0])
         && connectionMap.has("input" + permutatorMap[i][1] + "$pmos" + permutatorMap[j][1])
         && connectionMap.has("input" + permutatorMap[i][0] + "$nmos" + permutatorMap[k][0])

@@ -1,7 +1,7 @@
 'use strict';
 import { connectionMap, listInput, selectedTab, currentTab } from './main.js';
 import { checkAndUpdate, getTruthValue } from './circuit.js';
-function checkConnectionsNand(i, j, permutatorMap) {
+function checkConnectionsNand(i, j, k, permutatorMap) {
     return (connectionMap.has("input" + permutatorMap[i][0] + "$pmos" + permutatorMap[j][0])
         && connectionMap.has("input" + permutatorMap[i][1] + "$pmos" + permutatorMap[j][1])
         && connectionMap.has("input" + permutatorMap[i][0] + "$nmos" + permutatorMap[k][0])
@@ -21,7 +21,7 @@ export function checkNand() {
     for (let i = 0; i < permutatorMap.length; i++) {
         for (let j = 0; j < permutatorMap.length; j++) {
             for (let k = 0; k < permutatorMap.length; k++) {
-                if (checkConnectionsNand(i, j, permutatorMap)) {
+                if (checkConnectionsNand(i, j, k, permutatorMap)) {
                     nandCircuitValid = 1;
                     break;
                 }
@@ -56,7 +56,7 @@ export function checkNor() {
     for (let i = 0; i < permutatorMap.length; i++) {
         for (let j = 0; j < permutatorMap.length; j++) {
             for (let k = 0; k < permutatorMap.length; k++) {
-                if (checkConnectionsNor(i, j, permutatorMap)) {
+                if (checkConnectionsNor(i, j, k, permutatorMap)) {
                     norCircuitValid = 1;
                     break;
                 }

@@ -1,6 +1,6 @@
 [
 	{
-		"question": "1. Which of the following gates give 1 as the otput only when its inputs are 0 only?",
+		"question": "1. Which of the following gates gives 1 as the output only when its inputs are 0 only?",
 		"answers": {
 			"a": "NAND",
 			"b": "XOR",
@@ -20,7 +20,7 @@
 		"correctAnswer": "c"
 	},
 	{
-		"question": "3. An inverter can be realized as? <img src='images/option_exp2.png'>",
+		"question": "3. An inverter can be realized as? <img src='images/option.png'>",
 		"answers": {
 			"a": "i, iii",
 			"b": "ii, iv",
@@ -30,7 +30,7 @@
 		"correctAnswer": "c"
 	},
 	{
-		"question": " 4. In CMOS NAND gate the NMOS are in ",
+		"question": "4. In CMOS NAND gate the NMOS are in",
 		"answers": {
 			"a": "Series",
 			"b": "Parallel",
@@ -40,13 +40,13 @@
 		"correctAnswer": "a"
 	},
 	{
-		"question": "5. An inverter can be realized as?",
+		"question": "5. Which of the following are universal gates?",
 		"answers": {
-			"a": "High",
-			"b": "Low",
-			"c": "Moderate",
-			"d": "Cannot be predicted"
+			"a": "NAND",
+			"b": "NOR",
+			"c": "OR",
+			"d": "Both a and b"
 		},
-		"correctAnswer": "a"
+		"correctAnswer": "d"
 	}
 ]

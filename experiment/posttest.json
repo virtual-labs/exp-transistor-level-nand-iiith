@@ -7,7 +7,13 @@
       "c": "<img src='images/not.jpg'>",
       "d": "<img src='images/and.jpg'>"
     },
-    "correctAnswer": "a"
+    "correctAnswer": "a",
+		"explanations": { 
+		"a":"This symbol represents a NAND Gate.",
+		"b":"This symbol represents a buffer Gate.",
+		"c":"This symbol represents a NOT Gate.",
+		"d":"This symbol represents an AND Gate."
+		}
   },
   {
     "question": "2. Identify the symbol for NOR gate.",
@@ -17,7 +23,13 @@
       "c": "<img src='images/nor.jpg'>",
       "d": "<img src='images/or.jpg'>"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+		"explanations": { 
+		"a":"This symbol represents an AND Gate.",
+		"b":"This symbol represents a NAND Gate.",
+		"c":"This symbol represents a NOR Gate.",
+		"d":"This symbol represents an OR Gate."
+		}
   },
   {
     "question": "3. What is the correct representation (in terms of switches) for two n-devices connected in series having inputs 0 & 1?",
@@ -27,7 +39,13 @@
       "c": "<img src='images/n11.jpg'>",
       "d": "<img src='images/n01.jpg'>"
     },
-    "correctAnswer": "d"
+    "correctAnswer": "d",
+		"explanations": { 
+		"a":"This symbol represents two n-devices connected in series having inputs 0 & 0. An n-device having input 1 acts like a closed switch and that having input 0 acts like an open switch.",
+		"b":"This symbol represents two n-devices connected in series having inputs 1 & 0. An n-device having input 1 acts like a closed switch and that having input 0 acts like an open switch.",
+		"c":"This symbol represents two n-devices connected in series having inputs 1 & 1. An n-device having input 1 acts like a closed switch and that having input 0 acts like an open switch.",
+		"d":"This symbol represents two n-devices connected in series having inputs 0 & 1. An n-device having input 1 acts like a closed switch and that having input 0 acts like an open switch."
+		}
   },
   {
     "question": "4. What is the correct representation (in terms of switches) for two p-devices connected in series having both inputs as 1?",

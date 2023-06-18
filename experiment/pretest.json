@@ -7,7 +7,13 @@
 			"c": "XNOR",
 			"d": "NOR"
 		},
-		"correctAnswer": "d"
+		"correctAnswer": "d",
+		"explanations": { 
+		"a":"The NAND gate produces an output of 0 when both inputs are 1, and it produces an output of 1 for all other combinations of inputs. Therefore, the NAND gate does not satisfy the condition of giving an output of 1 only when both inputs are 0.",
+		"b":"The XOR gate produces an output of 1 when the inputs are different (one input is 1 and the other is 0), and it produces an output of 0 when the inputs are the same (both inputs are either 0 or 1). Similar to the NAND gate, the XOR gate does not meet the requirement of giving an output of 1 only when both inputs are 0.",
+		"c":"The XNOR gate produces an output of 1 when both inputs are the same (both inputs are either 0 or 1), and it produces an output of 0 when the inputs are different (one input is 1 and the other is 0). Again, the XNOR gate does not fulfil the condition of giving an output of 1 only when both inputs are 0.",
+		"d":"The NOR gate produces an output of 1 only when both inputs are 0. In all other cases (at least one input is 1), it produces an output of 0. Therefore, the NOR gate satisfies the condition mentioned in the question. When both inputs of the NOR gate are 0, it will give an output of 1."
+		}
 	},
 	{
 		"question": "2. Which of the following logic gates are functionally complete?",
@@ -17,7 +23,13 @@
 			"c": "NAND",
 			"d": "AND"
 		},
-		"correctAnswer": "c"
+		"correctAnswer": "c",
+		"explanations": { 
+		"a":"A set of logic gates is functionally complete if it can be used to represent any logical operation or construct any other gate. The OR gate alone is not functionally complete because it cannot implement the logical negation (NOT) operation.",
+		"b":"A set of logic gates is functionally complete if it can be used to represent any logical operation or construct any other gate. The XOR gate alone is not functionally complete because it cannot implement the logical negation (NOT) operation.",
+		"c":"A set of logic gates is functionally complete if it can be used to represent any logical operation or construct any other gate. The NAND gate, when combined with itself or used in different ways, can emulate all other basic logic gates",
+		"d":"A set of logic gates is functionally complete if it can be used to represent any logical operation or construct any other gate. The AND gate alone is not functionally complete because it cannot implement logical operations such as OR or NOT."
+		}
 	},
 	{
 		"question": "3. An inverter can be realized as? <img src='images/option.png'>",
@@ -27,7 +39,9 @@
 			"c": "All",
 			"d": "iii, iv"
 		},
-		"correctAnswer": "c"
+		"correctAnswer": "c",
+		"explanations": { 
+		}
 	},
 	{
 		"question": "4. In CMOS NAND gate the NMOS are in",
@@ -37,7 +51,13 @@
 			"c": "Random",
 			"d": "Series or Parallel"
 		},
-		"correctAnswer": "a"
+		"correctAnswer": "a",
+		"explanations": { 
+			"a":"In a CMOS NAND gate, the NMOS transistors are connected in series in the pull-down network. When any of the inputs to the NAND gate is at a logic high (1), the corresponding NMOS transistor in the series connection is turned on, providing a low resistance path to ground. This pulls the output of the CMOS NAND gate down to a logic low (0) state.",
+			"b":"In a CMOS NAND gate, the NMOS transistors are not connected in parallel. Instead, the PMOS transistors are connected in parallel in the pull-up network.",
+			"c":"The connection of NMOS transistors in a CMOS NAND gate is not random. It follows a specific design and circuit layout to ensure the desired logic functionality.",
+			"d":"It follows a specific design and circuit layout to ensure the desired logic functionality. It should be either parallel/series."
+		}
 	},
 	{
 		"question": "5. Which of the following are universal gates?",
@@ -47,6 +67,12 @@
 			"c": "OR",
 			"d": "Both a and b"
 		},
-		"correctAnswer": "d"
+		"correctAnswer": "d",
+		"explanations": { 
+		"a":"A universal gate is a gate that can be used to implement any logical function or construct any other gate. A NAND gate can be used to implement any logical function or construct any other gate, such as NOT, AND, and OR gates.",
+		"b":"A universal gate is a gate that can be used to implement any logical function or construct any other gate. A NOR gate can be used to implement any logical function or construct any other gate, including NOT, OR, and AND gates.",
+		"c":"A universal gate is a gate that can be used to implement any logical function or construct any other gate. The OR gate is not a universal gate. While it is a basic logic gate that performs the OR operation, it cannot implement the logical negation (NOT) operation. Therefore, it cannot be used to implement all possible logical functions or construct any other gate.",
+		"d":"Both NAND and NOR gates are universal gates. As explained earlier, they can be used to implement any logical function and construct any other gate, including NOT, AND, and OR gates."
+		}
 	}
 ]

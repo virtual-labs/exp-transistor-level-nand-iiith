@@ -281,7 +281,7 @@ function simulator1() {
             alignOrigin: [0.5, 0.5]
         },
 
-        duration: 6,
+        duration: 7,
         delay: 0,
         repeat: 0,
         repeatDelay: 3,
@@ -298,7 +298,7 @@ function simulator1() {
             alignOrigin: [0.5, 0.5]
         },
 
-        duration: 6,
+        duration: 7,
         delay: 0,
         repeat: 0,
         repeatDelay: 3,
@@ -315,7 +315,7 @@ function simulator1() {
             alignOrigin: [0.5, 0.5]
         },
 
-        duration: 6,
+        duration: 7,
         delay: 0,
         repeat: 0,
         repeatDelay: 3,
@@ -332,7 +332,7 @@ function simulator1() {
             alignOrigin: [0.5, 0.5]
         },
 
-        duration: 6,
+        duration: 7,
         delay: 0,
         repeat: 0,
         repeatDelay: 3,
@@ -349,7 +349,7 @@ function simulator1() {
             alignOrigin: [0.5, 0.5]
         },
 
-        duration: 6,
+        duration: 7,
         delay: 0,
         repeat: 0,
         repeatDelay: 3,
@@ -366,7 +366,7 @@ function simulator1() {
             alignOrigin: [0.5, 0.5]
         },
 
-        duration: 6,
+        duration: 7,
         delay: 0,
         repeat: 0,
         repeatDelay: 3,
@@ -383,7 +383,7 @@ function simulator1() {
             alignOrigin: [0.5, 0.5]
         },
 
-        duration: 6,
+        duration: 7,
         delay: 0,
         repeat: 0,
         repeatDelay: 3,
@@ -487,7 +487,7 @@ outputDisappear();
 timeline.add(setInputDots, 0);
 timeline.add(inputDotsAppear, 0);
 timeline.add(simulator1, 0);
-timeline.add(inputDotsDisappear, 8);
+timeline.add(inputDotsDisappear, 7);
 timeline.add(simulator2, 7);
 timeline.add(outputDotsDisappear, 13);
 timeline.add(outputHandler, 13);

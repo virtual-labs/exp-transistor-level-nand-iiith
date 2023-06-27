@@ -1,4 +1,6 @@
-[
+{
+  "version": 2.0,
+  "questions": [
   {
     "question": "1. Identify the symbol for NAND gate.",
     "answers": {
@@ -13,7 +15,8 @@
 		"b":"This symbol represents a buffer Gate.",
 		"c":"This symbol represents a NOT Gate.",
 		"d":"This symbol represents an AND Gate."
-		}
+		},
+    "difficulty": "beginner"
   },
   {
     "question": "2. Identify the symbol for NOR gate.",
@@ -29,7 +32,8 @@
 		"b":"This symbol represents a NAND Gate.",
 		"c":"This symbol represents a NOR Gate.",
 		"d":"This symbol represents an OR Gate."
-		}
+		},
+    "difficulty": "beginner"
   },
   {
     "question": "3. What is the correct representation (in terms of switches) for two n-devices connected in series having inputs 0 & 1?",
@@ -45,7 +49,8 @@
 		"b":"This symbol represents two n-devices connected in series having inputs 1 & 0. An n-device having input 1 acts like a closed switch and that having input 0 acts like an open switch.",
 		"c":"This symbol represents two n-devices connected in series having inputs 1 & 1. An n-device having input 1 acts like a closed switch and that having input 0 acts like an open switch.",
 		"d":"This symbol represents two n-devices connected in series having inputs 0 & 1. An n-device having input 1 acts like a closed switch and that having input 0 acts like an open switch."
-		}
+		},
+    "difficulty": "advanced"
   },
   {
     "question": "4. What is the correct representation (in terms of switches) for two p-devices connected in series having both inputs as 1?",
@@ -55,7 +60,13 @@
       "c": "Both NMOS and PMOS in parallel",
       "d": "None of the above"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "b",
+    "explanations": {
+        "a":"",
+        "b":"",
+        "c":"",
+        "d":""},
+    "difficulty": "advanced"
   },
   {
     "question": "5. Which of the following Boolean expressions is represented by the given Karnaugh map? <img src='images/kar1.jpg'>",
@@ -65,7 +76,13 @@
       "c": "A+B",
       "d": "AB"
     },
-    "correctAnswer": "a"
+    "correctAnswer": "a",
+    "explanations": {
+        "a":"",
+        "b":"",
+        "c":"",
+        "d":""},
+    "difficulty": "intermediate"
   },
   {
     "question": "6 Which of the following Boolean expressions is represented by the given Karnaugh map? <img src='images/kar2.jpg'>",
@@ -75,7 +92,13 @@
       "c": "AC",
       "d": "ABC"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+    "explanations": {
+        "a":"",
+        "b":"",
+        "c":"",
+        "d":""},
+    "difficulty": "intermediate"
   },
   {
     "question": "7. Which combination of logic gates is correct for the expression ABCD?",
@@ -85,7 +108,13 @@
       "c": "Both a & b",
       "d": "None"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "c",
+    "explanations": {
+        "a":"",
+        "b":"",
+        "c":"",
+        "d":""},
+    "difficulty": "advanced"
   },
   {
     "question": "8. Which combination of logic gates is correct for the following expression? <img src='images/exp1.jpg'>",
@@ -95,6 +124,13 @@
       "c": "none of the above",
       "d": "Both a & b"
     },
-    "correctAnswer": "d"
+    "correctAnswer": "d",
+    "explanations": {
+        "a":"",
+        "b":"",
+        "c":"",
+        "d":""},
+    "difficulty": "advanced"
   }
 ]
+}

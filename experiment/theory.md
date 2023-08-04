@@ -23,7 +23,8 @@ If switches are connected in series then the composite switch hence constructed 
 <img src="images/table2.png">
 
 If the switches are connected in parallel then the composite switch hence constructed is closed when either or both of the switches are closed. The parallel connection is shown in the figure below. The table indicates the states of the switch obtained by parallel connection depending on the inputs A and B
-Parallel connection of NMOS devices
+
+**Parallel connection of NMOS devices**
 
 <img src="images/gen_parallel.jpg">
 
@@ -31,7 +32,7 @@ Parallel connection of NMOS devices
 
 <img src="images/table3.png">  
 
-**Parallel connection of PMOS devices  
+**Parallel connection of PMOS devices**  
 
 <img src="images/table4.png">  
 

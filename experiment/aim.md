@@ -1,8 +1,8 @@
-**DEFINITION OF NAND GATE8**
+**DEFINITION OF NAND GATE**
 
-NAND gate has 1 output and 2 or more input
+NAND gate has 1 output and 2 or more inputs. 
 The output of the NAND gate is low only when all the inputs are high else it is low.
-A NAND gate could be veiwed as an AND gate with inverter at the output
+A NAND gate could be viewed as an AND gate with an inverter at the output
 
 **SCHEMATIC OF NAND GATE**
 
@@ -18,9 +18,9 @@ A NAND gate could be veiwed as an AND gate with inverter at the output
 
 **DEFINITION OF NOR GATE**
 
-NOR gate has 1 output and 2 or more input
-The output of NOR gate is high only when all the inputs are low else it is high
-A NOR gate could be viewed as an OR gate with inverter at the output
+NOR gate has 1 output and 2 or more inputs. 
+The output of NOR gate is high only when all the inputs are low else it is high. 
+A NOR gate could be viewed as an OR gate with an  inverter at the output
 
 **SCHEMATIC OF NOR GATE**
 

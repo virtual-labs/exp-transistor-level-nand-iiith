@@ -200,6 +200,19 @@ export function showTruthTable() {
             <td>1</td><td>1</td><td>0</td><td>  ${output[3]}  </td>
         </tr>`;
     }
+    let head = `<tr>
+    <th colspan="2">Inputs</th>
+    <th colspan="1">Expected Values</th>
+    <th colspan="1">Observed Values</th>
+</tr>
+<tr>
+    <th>Input 1</th>
+    <th>Input 2</th>
+    <th>Output</th>
+    <th>Output</th>
+</tr>`
+document.getElementById("table-head").innerHTML=head;
+
     listInput[0].input = initialInput0;
     listInput[1].input = initialInput1;
     checkAndUpdate();

@@ -72,6 +72,97 @@ export function checkNor() {
     return norCircuitValid;
 }
 
+function checkConnectionsAnd(i, j, k, permutatorMap, permuteInput) {
+    console.log(connectionMap)
+    return (connectionMap.has("input" + permuteInput[i][0] + "$pmos" + permutatorMap[j][0])
+        && connectionMap.has("input" + permuteInput[i][1] + "$pmos" + permutatorMap[j][1])
+        && connectionMap.has("input" + permuteInput[i][0] + "$nmos" + permutatorMap[k][0])
+        && connectionMap.has("input" + permuteInput[i][1] + "$nmos" + permutatorMap[k][1])
+        && connectionMap.has("vdd0$pmos" + permutatorMap[j][0])
+        && connectionMap.has("vdd0$pmos" + permutatorMap[j][1])
+        && connectionMap.has("vdd0$pmos" + permutatorMap[j][2])
+        && connectionMap.has("ground0$nmos" + permutatorMap[k][1])
+        && connectionMap.has("ground0$nmos" + permutatorMap[k][2])
+        && connectionMap.has("pmos" + permutatorMap[j][2] + "$output0")
+        && connectionMap.has("nmos" + permutatorMap[k][2] + "$output0")
+        && connectionMap.has("nmos" + permutatorMap[k][0] + "$pmos" + permutatorMap[j][2])
+        && connectionMap.has("nmos" + permutatorMap[k][0] + "$nmos" + permutatorMap[k][2])
+        && connectionMap.has("pmos" + permutatorMap[j][0] + "$pmos" + permutatorMap[j][2])
+        && connectionMap.has("pmos" + permutatorMap[j][0] + "$nmos" + permutatorMap[k][2])
+        && connectionMap.has("pmos" + permutatorMap[j][1] + "$pmos" + permutatorMap[j][2])
+        && connectionMap.has("pmos" + permutatorMap[j][1] + "$nmos" + permutatorMap[k][2])
+        && connectionMap.has("nmos" + permutatorMap[k][1] + "$nmos" + permutatorMap[k][0])
+        && (connectionMap.size === 18))
+}
+export function checkAnd() {
+    const permuteInput = permutator([0,1])
+    const permutatorMap = permutator([0, 1, 2]);
+    let andCircuitValid = 0;
+    for (let i = 0; i < permuteInput.length; i++) {
+        for (let j = 0; j < permutatorMap.length; j++) {
+            for (let k = 0; k < permutatorMap.length; k++) {
+                if (checkConnectionsAnd(i, j, k, permutatorMap, permuteInput)) {
+                    andCircuitValid = 1;
+                    break;
+                }
+            }
+            if (andCircuitValid === 1) {
+                console.log("Yayyyyy")
+                break;
+            }
+        }
+        if (andCircuitValid === 1) {
+            console.log("Yayyyyy")
+            break;
+        }
+    }
+    return andCircuitValid;
+}
+function checkConnectionsOr(i, j, k, permutatorMap, permuteInput) {
+    console.log(permuteInput)
+    return (connectionMap.has("input" + permuteInput[i][0] + "$pmos" + permutatorMap[j][0])
+        && connectionMap.has("input" + permuteInput[i][1] + "$pmos" + permutatorMap[j][1])
+        && connectionMap.has("input" + permuteInput[i][0] + "$nmos" + permutatorMap[k][0])
+        && connectionMap.has("input" + permuteInput[i][1] + "$nmos" + permutatorMap[k][1])
+        && connectionMap.has("vdd0$pmos" + permutatorMap[j][0])
+        && connectionMap.has("vdd0$pmos" + permutatorMap[j][2])
+        && connectionMap.has("ground0$nmos" + permutatorMap[k][1])
+        && connectionMap.has("ground0$nmos" + permutatorMap[k][2])
+        && connectionMap.has("ground0$nmos" + permutatorMap[k][0])
+        && connectionMap.has("pmos" + permutatorMap[j][2] + "$output0")
+        && connectionMap.has("nmos" + permutatorMap[k][2] + "$output0")
+        && connectionMap.has("nmos" + permutatorMap[k][0] + "$pmos" + permutatorMap[j][2])
+        && connectionMap.has("nmos" + permutatorMap[k][0] + "$nmos" + permutatorMap[k][2])
+        && connectionMap.has("nmos" + permutatorMap[k][1] + "$pmos" + permutatorMap[j][2])
+        && connectionMap.has("nmos" + permutatorMap[k][1] + "$nmos" + permutatorMap[k][2])
+        && connectionMap.has("pmos" + permutatorMap[j][1] + "$pmos" + permutatorMap[j][2])
+        && connectionMap.has("pmos" + permutatorMap[j][1] + "$nmos" + permutatorMap[k][2])
+        && connectionMap.has("pmos" + permutatorMap[j][1] + "$pmos" + permutatorMap[j][0])
+        && (connectionMap.size === 18))
+}
+export function checkOr() {
+    const permuteInput = permutator([0,1])
+    const permutatorMap = permutator([0, 1,2]);
+    let orCircuitValid = 0;
+    for (let i = 0; i < permuteInput.length; i++) {
+        for (let j = 0; j < permutatorMap.length; j++) {
+            for (let k = 0; k < permutatorMap.length; k++) {
+                if (checkConnectionsOr(i, j, k, permutatorMap,permuteInput)) {
+                    orCircuitValid = 1;
+                    break;
+                }
+            }
+            if (orCircuitValid === 1) {
+                break;
+            }
+        }
+        if (orCircuitValid === 1) {
+            break;
+        }
+    }
+    return orCircuitValid;
+}
+
 export function modifyOutput() {
     const divOutput0 = document.getElementById("output0");
     divOutput0.innerHTML = 'Output<br>' + getTruthValue();
@@ -122,11 +213,19 @@ export function checkPseudoNmos() {
 export function circuitValid() {
     const nandCircuitValid = checkNand();
     const norCircuitValid = checkNor();
+    const andCircuitValid = checkAnd();
+    const orCircuitValid = checkOr();
     // check if correct nand gate is made using correct components
     if (selectedTab === currentTab.NAND && nandCircuitValid) {
         changeObservation("&#10004; Circuit is correct", 'text-danger', 'text-success');
     }
     else if (selectedTab === currentTab.NOR && norCircuitValid) {
+        changeObservation("&#10004; Circuit is correct", 'text-danger', 'text-success');
+    }
+    else if(selectedTab === currentTab.AND && andCircuitValid){
+        changeObservation("&#10004; Circuit is correct", 'text-danger', 'text-success');
+    }
+    else if(selectedTab === currentTab.OR && orCircuitValid){
         changeObservation("&#10004; Circuit is correct", 'text-danger', 'text-success');
     }
     else {
@@ -170,7 +269,7 @@ export function showTruthTable() {
     listInput[1].input = 1;
     checkAndUpdate();
     output[3] = getTruthValue();
-    if (selectedTab === 0) {
+    if (selectedTab === currentTab.NAND) {
         tableBody.innerHTML = ` 
         <tr>
             <td>0</td><td>0</td><td>1</td><td>  ${output[0]}  </td>
@@ -185,7 +284,7 @@ export function showTruthTable() {
             <td>1</td><td>1</td><td>0</td><td>  ${output[3]}  </td>
         </tr>`;
     }
-    else {
+    else if(selectedTab === currentTab.NOR) {
         tableBody.innerHTML = `
         <tr>
             <td>0</td><td>0</td><td>1</td><td>  ${output[0]}  </td>
@@ -198,6 +297,36 @@ export function showTruthTable() {
         </tr> 
         <tr>
             <td>1</td><td>1</td><td>0</td><td>  ${output[3]}  </td>
+        </tr>`;
+    }
+    else if(selectedTab === currentTab.OR) {
+        tableBody.innerHTML = `
+        <tr>
+            <td>0</td><td>0</td><td>0</td><td>  ${output[0]}  </td>
+        </tr>
+        <tr>
+            <td>0</td><td>1</td><td>1</td><td>  ${output[1]}  </td>
+        </tr> 
+        <tr>
+            <td>1</td><td>0</td><td>1</td><td>  ${output[2]}  </td>
+        </tr> 
+        <tr>
+            <td>1</td><td>1</td><td>1</td><td>  ${output[3]}  </td>
+        </tr>`;
+    }
+    else if(selectedTab === currentTab.AND) {
+        tableBody.innerHTML = `
+        <tr>
+            <td>0</td><td>0</td><td>0</td><td>  ${output[0]}  </td>
+        </tr>
+        <tr>
+            <td>0</td><td>1</td><td>0</td><td>  ${output[1]}  </td>
+        </tr> 
+        <tr>
+            <td>1</td><td>0</td><td>0</td><td>  ${output[2]}  </td>
+        </tr> 
+        <tr>
+            <td>1</td><td>1</td><td>1</td><td>  ${output[3]}  </td>
         </tr>`;
     }
     let head = `<tr>

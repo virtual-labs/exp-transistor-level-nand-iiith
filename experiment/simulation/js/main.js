@@ -20,7 +20,7 @@ container.addEventListener("contextmenu", function (e) {
 });
 
 // Tab selection
-export const currentTab = { NAND: 0, NOR: 1 };
+export const currentTab = { NAND: 0, NOR: 1, AND :2, OR:3 };
 export let selectedTab = currentTab.NAND;
 const tabs = document.querySelectorAll('.v-tabs li');
 

@@ -1,8 +1,8 @@
 // This function checks map when called
 'use strict';
-import { connectionMap, listPmos, listNmos,listInput, listOutput, listGround ,listVdd } from './main.js';
+import { connectionMap, listPmos, listNmos,listInput, listOutput, listGround ,listVdd, selectedTab, currentTab } from './main.js';
 import{checkPseudoNmos} from './nand.js';
-import { checkNand } from './nand.js';
+import { checkNand, checkNor, checkAnd, checkOr } from './nand.js';
 export function checkAndUpdate() {
     // these variables are for pseudo nmos circuit
     listOutput[0].voltage = 0;
@@ -134,14 +134,44 @@ export function getTruthValue() {
     const out = listOutput[0].voltage;
     const psNmosCircuitValid = checkPseudoNmos();
     const nandCircuitValid =  checkNand();
+    const norCircuitValid =  checkNor();
+    const andCircuitValid =  checkAnd();
+    const orCircuitValid =  checkOr();
     if (listInput[0].input === 0 && psNmosCircuitValid === 1) {
         return "1";
     } else if (listInput[0].input === 1 && psNmosCircuitValid === 1) {
         return "0";
     }
-    if (listInput[0].input === 0 && listInput[1].input === 1 && nandCircuitValid === 1) {
+    if (selectedTab == currentTab.NAND && listInput[0].input === 0 && listInput[1].input === 1 && nandCircuitValid === 1) {
         return "1";
-    } else if (listInput[0].input === 1 && listInput[1].input === 0 && nandCircuitValid === 1) {
+    } else if (selectedTab == currentTab.NAND && listInput[0].input === 1 && listInput[1].input === 0 && nandCircuitValid === 1) {
+        return "1";
+    }
+    if (selectedTab == currentTab.NOR &&  listInput[0].input === 0 && listInput[1].input === 1 && norCircuitValid === 1) {
+        return "0";
+    } else if (selectedTab == currentTab.NOR && listInput[0].input === 1 && listInput[1].input === 0 && norCircuitValid === 1) {
+        return "0";
+    }
+    if (selectedTab == currentTab.AND && listInput[0].input === 0 && listInput[1].input === 1 && andCircuitValid === 1) {
+        return "0";
+    } else if (selectedTab == currentTab.AND && listInput[0].input === 1 && listInput[1].input === 0 && andCircuitValid === 1) {
+        return "0";
+    }
+    else if (selectedTab == currentTab.AND && listInput[0].input === 1 && listInput[1].input === 1 && andCircuitValid === 1) {
+        return "1";
+    }
+    else if (selectedTab == currentTab.AND && listInput[0].input === 0 && listInput[1].input === 0 && andCircuitValid === 1) {
+        return "0";
+    }
+    if (selectedTab == currentTab.OR &&  listInput[0].input === 0 && listInput[1].input === 1 && orCircuitValid === 1) {
+        return "1";
+    } else if (selectedTab == currentTab.OR && listInput[0].input === 1 && listInput[1].input === 0 && orCircuitValid === 1) {
+        return "1";
+    }
+    else if (selectedTab == currentTab.OR && listInput[0].input === 0 && listInput[1].input === 0 && orCircuitValid === 1) {
+        return "0";
+    }
+    else if (selectedTab == currentTab.OR && listInput[0].input === 1 && listInput[1].input === 1 && orCircuitValid === 1) {
         return "1";
     }
     if (out === 5 || out === 9) {

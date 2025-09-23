@@ -1,10 +1,10 @@
 'use strict';
-import { listPmos, listNmos,listInput, listOutput, listGround ,listVdd, refreshObservations } from './main.js';
+import { listPmos, listNmos,listInput, listOutput, listGround ,listVdd, refreshObservations, currentTab, selectedTab } from './main.js';
 import { jsplumbInstance,addInstanceFinalInput,addInstanceFinalOutput } from './components.js';
 import { addInstanceGround, addInstanceVdd, addInstancePmos, addInstanceNmos } from './components.js';
 import { checkAndUpdate } from './circuit.js';
 import { modifyOutput, circuitValid,showTruthTable} from './nand.js';
-
+const EMPTY="";
 let count = { PMOS: 0, NMOS: 0, VDD: 0, Ground: 0, Inverter: 0, Mux: 0, Latch: 0, Transistor: 0, Clock: 0, Clockbar: 0 };
 let maxCount = { PMOS: 2, NMOS: 2, VDD: 1, Ground: 1, Inverter: 0, Mux: 0, Latch: 0, Transistor: 0, Clock: 0, Clockbar: 0 };
 
@@ -16,6 +16,11 @@ window.nandValid=nandValid;
 
 export function resetCounts() {
     count = { PMOS: 0, NMOS: 0, VDD: 0, Ground: 0, Inverter: 0, Mux: 0, Latch: 0, Transistor: 0, Clock: 0, Clockbar: 0 };
+
+    if(selectedTab === currentTab.AND || selectedTab === currentTab.OR)
+    maxCount = { PMOS: 3, NMOS: 3, VDD: 1, Ground: 1, Inverter: 0, Mux: 0, Latch: 0, Transistor: 0, Clock: 0, Clockbar: 0 };
+
+    else
     maxCount = { PMOS: 2, NMOS: 2, VDD: 1, Ground: 1, Inverter: 0, Mux: 0, Latch: 0, Transistor: 0, Clock: 0, Clockbar: 0 };
 }
 export function nandValid() {
@@ -29,6 +34,10 @@ function printExcessComponents() {
     const result = document.getElementById("error-container");
     result.innerHTML = "Required no. of components of this type are already present in the workspace";
     result.className = "text-danger";
+    // Delay clearing the error message by 3 seconds (adjust as needed)
+    setTimeout(function() {
+        result.innerHTML = EMPTY; // Clear the error message
+    }, 3000); // 3000 milliseconds = 3 seconds
 }
 function compPmos() {
     maxCount.PMOS -= 1;

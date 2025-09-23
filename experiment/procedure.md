@@ -20,7 +20,7 @@
 * On clicking "validate" option after completing the circuit (assuming all connections are done correctly) you should see a table on the right side of the workspace
 * By default, both the inputs have been set to 1 and the corresponding output observed is 0. To check otherwise, double-click the input.
 
-# Psuedo NMOS
+# NOR Circuit
 
 ## Components Required - 
 

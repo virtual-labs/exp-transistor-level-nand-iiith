@@ -1,136 +1,141 @@
 {
   "version": 2.0,
   "questions": [
-  {
-    "question": "1. Identify the symbol for NAND gate.",
-    "answers": {
-      "a": "<img src='images/nand.jpg'>",
-      "b": "<img src='images/inv.jpg'>",
-      "c": "<img src='images/not.jpg'>",
-      "d": "<img src='images/and.jpg'>"
+    {
+      "question": "1. Identify the symbol for NAND gate.",
+      "answers": {
+        "a": "<img src='images/nand.jpg'>",
+        "b": "<img src='images/inv.jpg'>",
+        "c": "<img src='images/not.jpg'>",
+        "d": "<img src='images/and.jpg'>"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. This symbol represents a NAND Gate.",
+        "b": "Incorrect. This symbol represents a buffer Gate.",
+        "c": "Incorrect. This symbol represents a NOT Gate.",
+        "d": "Incorrect. This symbol represents an AND Gate."
+      },
+      "difficulty": "beginner"
     },
-    "correctAnswer": "a",
-		"explanations": { 
-		"a":"This symbol represents a NAND Gate.",
-		"b":"This symbol represents a buffer Gate.",
-		"c":"This symbol represents a NOT Gate.",
-		"d":"This symbol represents an AND Gate."
-		},
-    "difficulty": "beginner"
-  },
-  {
-    "question": "2. Identify the symbol for NOR gate.",
-    "answers": {
-      "a": "<img src='images/and.jpg'>",
-      "b": "<img src='images/nand.jpg'>",
-      "c": "<img src='images/nor.jpg'>",
-      "d": "<img src='images/or.jpg'>"
+    {
+      "question": "2. Identify the symbol for NOR gate.",
+      "answers": {
+        "a": "<img src='images/and.jpg'>",
+        "b": "<img src='images/nand.jpg'>",
+        "c": "<img src='images/nor.jpg'>",
+        "d": "<img src='images/or.jpg'>"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. This symbol represents an AND Gate.",
+        "b": "Incorrect. This symbol represents a NAND Gate.",
+        "c": "Correct. This symbol represents a NOR Gate.",
+        "d": "Incorrect. This symbol represents an OR Gate."
+      },
+      "difficulty": "beginner"
     },
-    "correctAnswer": "c",
-		"explanations": { 
-		"a":"This symbol represents an AND Gate.",
-		"b":"This symbol represents a NAND Gate.",
-		"c":"This symbol represents a NOR Gate.",
-		"d":"This symbol represents an OR Gate."
-		},
-    "difficulty": "beginner"
-  },
-  {
-    "question": "3. What is the correct representation (in terms of switches) for two n-devices connected in series having inputs 0 & 1?",
-    "answers": {
-      "a": "<img src='images/n00.jpg'>",
-      "b": "<img src='images/n10.jpg'>",
-      "c": "<img src='images/n11.jpg'>",
-      "d": "<img src='images/n01.jpg'>"
+    {
+      "question": "3. What is the correct representation (in terms of switches) for two n-devices connected in series having inputs 0 & 1?",
+      "answers": {
+        "a": "<img src='images/n00.jpg'>",
+        "b": "<img src='images/n10.jpg'>",
+        "c": "<img src='images/n11.jpg'>",
+        "d": "<img src='images/n01.jpg'>"
+      },
+      "correctAnswer": "d",
+      "explanations": {
+        "a": "Incorrect. This symbol represents two n-devices connected in series having inputs 0 & 0. An n-device having input 1 acts like a closed switch and that having input 0 acts like an open switch.",
+        "b": "Incorrect. This symbol represents two n-devices connected in series having inputs 1 & 0. An n-device having input 1 acts like a closed switch and that having input 0 acts like an open switch.",
+        "c": "Incorrect. This symbol represents two n-devices connected in series having inputs 1 & 1. An n-device having input 1 acts like a closed switch and that having input 0 acts like an open switch.",
+        "d": "Correct. This symbol represents two n-devices connected in series having inputs 0 & 1. An n-device having input 1 acts like a closed switch and that having input 0 acts like an open switch."
+      },
+      "difficulty": "advanced"
     },
-    "correctAnswer": "d",
-		"explanations": { 
-		"a":"This symbol represents two n-devices connected in series having inputs 0 & 0. An n-device having input 1 acts like a closed switch and that having input 0 acts like an open switch.",
-		"b":"This symbol represents two n-devices connected in series having inputs 1 & 0. An n-device having input 1 acts like a closed switch and that having input 0 acts like an open switch.",
-		"c":"This symbol represents two n-devices connected in series having inputs 1 & 1. An n-device having input 1 acts like a closed switch and that having input 0 acts like an open switch.",
-		"d":"This symbol represents two n-devices connected in series having inputs 0 & 1. An n-device having input 1 acts like a closed switch and that having input 0 acts like an open switch."
-		},
-    "difficulty": "advanced"
-  },
-  {
-    "question": "4. What is the correct representation (in terms of switches) for two p-devices connected in series having both inputs as 1?",
-    "answers": {
-      "a": "<img src='images/p00.jpg'>",
-      "b": "NMOS in parallel and PMOS in series",
-      "c": "Both NMOS and PMOS in parallel",
-      "d": "None of the above"
+    {
+      "question": "4. What is the correct representation (in terms of switches) for two p-devices connected in series having both inputs as 1?",
+      "answers": {
+        "a": "<img src='images/p00.jpg'>",
+        "b": "<img src='images/p01.jpg'>",
+        "c": "<img src='images/p02.jpg'>",
+        "d": "None of the above"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. This shows two p-devices connected in series with both inputs as 0. A p-device having input 0 acts like a closed switch, so both switches are closed in series.",
+        "b": "Incorrect. This shows two p-devices connected in series with inputs 0 & 1. A p-device having input 0 acts like a closed switch and input 1 acts like an open switch.",
+        "c": "Correct. This shows the correct representation for two p-devices connected in series with both inputs as 1. A p-device having input 1 acts like an open switch, so both switches are open in series.",
+        "d": "Incorrect. This option indicates that none of the diagrams correctly represent the scenario described in the question."
+      },
+      "difficulty": "advanced"
     },
-    "correctAnswer": "b",
-    "explanations": {
-        "a":"",
-        "b":"",
-        "c":"",
-        "d":""},
-    "difficulty": "advanced"
-  },
-  {
-    "question": "5. Which of the following Boolean expressions is represented by the given Karnaugh map? <img src='images/kar1.jpg'>",
-    "answers": {
-      "a": "B",
-      "b": "A",
-      "c": "A+B",
-      "d": "AB"
+    {
+      "question": "5. Which of the following Boolean expressions is represented by the given Karnaugh map? <img src='images/kar1.jpg'>",
+      "answers": {
+        "a": "B",
+        "b": "A",
+        "c": "A+B",
+        "d": "AB"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. The Karnaugh map shows that the output is 1 when B=1, regardless of the value of A. This simplifies to just B.",
+        "b": "Incorrect. This would mean the output depends only on A, but the K-map shows it depends on B.",
+        "c": "Incorrect. A+B (A OR B) would be 1 when either A or B is 1, which doesn't match the given K-map pattern.",
+        "d": "Incorrect. AB (A AND B) would only be 1 when both A and B are 1, which doesn't match the K-map."
+      },
+      "difficulty": "intermediate"
     },
-    "correctAnswer": "a",
-    "explanations": {
-        "a":"",
-        "b":"",
-        "c":"",
-        "d":""},
-    "difficulty": "intermediate"
-  },
-  {
-    "question": "6 Which of the following Boolean expressions is represented by the given Karnaugh map? <img src='images/kar2.jpg'>",
-    "answers": {
-      "a": "AB",
-      "b": "BC",
-      "c": "AC",
-      "d": "ABC"
+    {
+      "question": "6 Which of the following Boolean expressions is represented by the given Karnaugh map? <img src='images/kar2.jpg'>",
+      "answers": {
+        "a": "AB",
+        "b": "BC",
+        "c": "AC",
+        "d": "ABC"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. AB would only depend on variables A and B, but this K-map involves three variables A, B, and C.",
+        "b": "Incorrect. BC would only be 1 when both B and C are 1, which doesn't match the pattern shown in the K-map.",
+        "c": "Correct. The Karnaugh map shows that the output is 1 when both A and C are 1, regardless of the value of B. This simplifies to AC.",
+        "d": "Incorrect. ABC would only be 1 when all three variables A, B, and C are 1, which is more restrictive than what the K-map shows."
+      },
+      "difficulty": "intermediate"
     },
-    "correctAnswer": "c",
-    "explanations": {
-        "a":"",
-        "b":"",
-        "c":"",
-        "d":""},
-    "difficulty": "intermediate"
-  },
-  {
-    "question": "7. Which combination of logic gates is correct for the expression ABCD?",
-    "answers": {
-      "a": "<img src='images/t1.jpg'>",
-      "b": "<img src='images/t2.jpg'>",
-      "c": "Both a & b",
-      "d": "None"
+    {
+      "question": "7. Which combination of logic gates is correct for the expression ABCD?",
+      "answers": {
+        "a": "<img src='images/t1.jpg'>",
+        "b": "<img src='images/t2.jpg'>",
+        "c": "Both a & b",
+        "d": "None"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Partially correct. This shows one valid implementation of the ABCD expression using a combination of logic gates.",
+        "b": "Partially correct. This shows another valid implementation of the ABCD expression using a different combination of logic gates.",
+        "c": "Correct. Both implementations shown in options a and b correctly represent the ABCD expression. Multiple gate combinations can implement the same Boolean function.",
+        "d": "Incorrect. At least one (actually both) of the given implementations correctly represents ABCD."
+      },
+      "difficulty": "advanced"
     },
-    "correctAnswer": "c",
-    "explanations": {
-        "a":"",
-        "b":"",
-        "c":"",
-        "d":""},
-    "difficulty": "advanced"
-  },
-  {
-    "question": "8. Which combination of logic gates is correct for the following expression? <img src='images/exp1.jpg'>",
-    "answers": {
-      "a": "<img src='images/t3.jpg'>",
-      "b": "<img src='images/t4.jpg'>",
-      "c": "none of the above",
-      "d": "Both a & b"
-    },
-    "correctAnswer": "d",
-    "explanations": {
-        "a":"",
-        "b":"",
-        "c":"",
-        "d":""},
-    "difficulty": "advanced"
-  }
-]
+    {
+      "question": "8. Which combination of logic gates is correct for the following expression? <img src='images/exp1.jpg'>",
+      "answers": {
+        "a": "<img src='images/t3.jpg'>",
+        "b": "<img src='images/t4.jpg'>",
+        "c": "none of the above",
+        "d": "Both a & b"
+      },
+      "correctAnswer": "d",
+      "explanations": {
+        "a": "Partially correct. This shows one valid implementation of the given Boolean expression using logic gates.",
+        "b": "Partially correct. This shows another valid implementation of the same Boolean expression using a different gate arrangement.",
+        "c": "Incorrect. Both options a and b provide valid implementations of the given expression.",
+        "d": "Correct. Both implementations shown in options a and b correctly represent the Boolean expression shown in the image. Different gate combinations can implement the same logical function."
+      },
+      "difficulty": "advanced"
+    }
+  ]
 }

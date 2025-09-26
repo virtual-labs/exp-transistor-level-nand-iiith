@@ -113,10 +113,10 @@
       },
       "correctAnswer": "c",
       "explanations": {
-        "a": "Partially correct. This shows one valid implementation of the ABCD expression using a combination of logic gates.",
-        "b": "Partially correct. This shows another valid implementation of the ABCD expression using a different combination of logic gates.",
-        "c": "Correct. Both implementations shown in options a and b correctly represent the ABCD expression. Multiple gate combinations can implement the same Boolean function.",
-        "d": "Incorrect. At least one (actually both) of the given implementations correctly represents ABCD."
+        "a": "Incorrect. This shows one valid implementation, but not the only correct combination for ABCD.",
+        "b": "Incorrect. This shows another valid implementation, but not the only correct combination for ABCD.",
+        "c": "Correct. Both implementations shown in options a and b correctly represent the ABCD expression; multiple gate combinations can implement the same Boolean function.",
+        "d": "Incorrect. At least one of the given implementations correctly represents ABCD."
       },
       "difficulty": "advanced"
     },
@@ -130,10 +130,10 @@
       },
       "correctAnswer": "d",
       "explanations": {
-        "a": "Partially correct. This shows one valid implementation of the given Boolean expression using logic gates.",
-        "b": "Partially correct. This shows another valid implementation of the same Boolean expression using a different gate arrangement.",
-        "c": "Incorrect. Both options a and b provide valid implementations of the given expression.",
-        "d": "Correct. Both implementations shown in options a and b correctly represent the Boolean expression shown in the image. Different gate combinations can implement the same logical function."
+        "a": "Incorrect. This shows one valid implementation, but not the only correct combination for the given Boolean expression.",
+        "b": "Incorrect. This shows another valid implementation, but not the only correct combination for the given Boolean expression.",
+        "c": "Incorrect. Both options a and b provide valid implementations; 'none of the above' is not correct.",
+        "d": "Correct. Both implementations shown in options a and b correctly represent the Boolean expression shown in the image; different gate combinations can implement the same logical function."
       },
       "difficulty": "advanced"
     }
